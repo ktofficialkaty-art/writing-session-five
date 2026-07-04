@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雅思写作 S5 · 地图题 &amp; Discuss Both Views</title>
+<style>
+:root{
+  --c-primary:#7C5CBF;--c-primary-dark:#5B3FA0;--c-primary-darker:#46307D;
+  --c-primary-light:#EFE9FB;--c-primary-light2:#F6F2FC;--c-bg:#FAF8FD;
+  --c-card:#FFFFFF;--c-border:#E3DBF5;--c-text:#2E2A38;--c-text-soft:#6B6478;
+  --c-orange:#E8954A;--c-orange-bg:#FFF4E8;--c-orange-border:#F0C28C;
+  --c-green:#2F8F5B;--c-green-bg:#EAF7EF;--c-red:#D1495B;--c-red-bg:#FDEDEF;
+  --shadow:0 4px 16px rgba(91,63,160,.10);--shadow-lg:0 10px 32px rgba(91,63,160,.16);
+  --radius:14px;
+}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;background:var(--c-bg);color:var(--c-text);line-height:1.7}
+.eng{font-family:Georgia,"Times New Roman",serif} img{max-width:100%;display:block}
+header.topbar{position:sticky;top:0;z-index:50;background:linear-gradient(135deg,var(--c-primary-darker),var(--c-primary-dark));color:#fff;box-shadow:var(--shadow-lg)}
+.topbar-inner{max-width:1280px;margin:0 auto;padding:14px 24px 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:18px;letter-spacing:.5px}.logo .badge{background:rgba(255,255,255,.18);border-radius:8px;padding:3px 9px;font-size:13px;margin-right:8px}
+.titleblock{flex:1;min-width:220px}.titleblock h1{margin:0;font-size:20px}.titleblock p{margin:2px 0 0;font-size:12.5px;color:rgba(255,255,255,.78)}
+nav.tabs{max-width:1280px;margin:10px auto 0;padding:0 24px;display:flex;gap:6px;flex-wrap:wrap}
+nav.tabs button{appearance:none;border:none;background:rgba(255,255,255,.08);color:rgba(255,255,255,.86);padding:10px 20px;border-radius:10px 10px 0 0;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+nav.tabs button.active{background:var(--c-bg);color:var(--c-primary-dark)}
+main{max-width:1280px;margin:0 auto;padding:28px 24px 80px}.view{display:none}.view.active{display:block}
+.sec{margin-bottom:38px}.sec>h2{font-size:22px;color:var(--c-primary-darker);margin:0 0 14px;padding-bottom:10px;border-bottom:3px solid var(--c-primary-light);display:flex;align-items:center;gap:10px}
+.sec>h2 .num{background:var(--c-primary);color:#fff;border-radius:8px;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+h3.sub{font-size:17.5px;color:var(--c-primary-dark);margin:26px 0 12px;display:flex;align-items:center;gap:8px}
+h3.sub:before{content:"";width:6px;height:18px;background:var(--c-primary);border-radius:3px;display:inline-block}
+h4.sub2{font-size:15.5px;margin:18px 0 10px}.card,.vex,.prompt-box{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);margin:14px 0}
+.tip-box{background:var(--c-orange-bg);border:1px solid var(--c-orange-border);border-left:5px solid var(--c-orange);border-radius:10px;padding:14px 18px;margin:14px 0}
+.formula-box{background:var(--c-primary-light2);border:1px solid var(--c-border);border-left:5px solid var(--c-primary);border-radius:10px;padding:14px 18px;margin:12px 0}
+.note-cn{color:var(--c-text-soft);font-size:13.5px}.pill{display:inline-block;background:var(--c-primary-light);color:var(--c-primary-dark);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;margin:2px}
+.split-layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(320px,2fr);gap:20px;align-items:start;margin:14px 0}.split-img{position:sticky;top:104px}.split-content{min-width:0;font-size:14px}
+@media(max-width:900px){.split-layout{grid-template-columns:1fr}.split-img{position:static}}
+.pb-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}.pb-tag{background:var(--c-primary-light);color:var(--c-primary-dark);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700}.pb-body{font-size:14.5px}
+.course-img{border:1px solid var(--c-border);border-radius:10px;background:#fff;margin-top:12px}
+.homework-layout{--hw-height:clamp(580px,calc(100vh - 190px),820px);grid-template-columns:minmax(380px,1fr) minmax(420px,1fr);align-items:start}
+.homework-map{height:var(--hw-height);display:flex;align-items:flex-start;justify-content:center}
+.homework-map .course-img{height:100%;width:auto;max-width:100%;object-fit:contain;margin:0}
+.homework-writing{height:var(--hw-height);display:flex;flex-direction:column;min-height:0}
+.homework-writing .prompt-box{flex:none;margin:0 0 10px;padding:14px 18px}
+.homework-writing .wbox{flex:1;min-height:0;margin:0;display:flex;flex-direction:column}
+.homework-writing .editable{flex:1;min-height:0;overflow-y:auto}
+@media(max-width:900px){.homework-layout{grid-template-columns:1fr}.homework-map,.homework-writing{height:auto;min-height:0}.homework-map .course-img{width:100%;height:auto}.homework-writing .prompt-box{margin-top:12px}.homework-writing .editable{min-height:360px}}
+.hl-wrap{position:relative;background:#fff;border:1px solid var(--c-border);border-radius:12px;overflow:hidden}.hl-wrap img{width:100%}.hotspot{position:absolute;border:3px solid transparent;border-radius:12px;background:rgba(124,92,191,0);transition:.15s;pointer-events:none}.hotspot.on{border-color:#E8954A;background:rgba(232,149,74,.20);box-shadow:0 0 0 9999px rgba(70,48,125,.05)}
+.click-sent{border-left:4px solid var(--c-border);padding:9px 12px;margin:8px 0;background:#fff;border-radius:8px;cursor:pointer;font-size:14px;line-height:1.55}.click-sent:hover,.click-sent.active{border-left-color:var(--c-orange);background:var(--c-orange-bg)}
+.interactive-map{background:#fff;border:1px solid var(--c-border);border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+.interactive-map svg{display:block;width:100%;height:auto;background:#fbfdff}
+.interactive-map .map-title{font:700 17px "Microsoft YaHei",sans-serif;fill:#2E2A38}
+.interactive-map .map-label{font:600 12px "Microsoft YaHei",sans-serif;fill:#2E2A38;text-anchor:middle;pointer-events:none}
+.interactive-map .map-small{font:600 10px "Microsoft YaHei",sans-serif;fill:#4f485c;text-anchor:middle;pointer-events:none}
+.interactive-map .road-label{font:600 11px Georgia,serif;fill:#5d5668;text-anchor:middle;pointer-events:none}
+.interactive-map .site{fill:#f8f6fb;stroke:#6b6478;stroke-width:1.5;transition:opacity .2s,fill .2s,stroke .2s,stroke-width .2s}
+.interactive-map .water{fill:#e8f5f7;stroke:#5d8c94;stroke-width:1.5}
+.interactive-map .green{fill:#eef7e9;stroke:#63865b;stroke-width:1.5}
+.interactive-map .road{fill:none;stroke:#d9d3df;stroke-width:18}
+.interactive-map .road-edge{fill:none;stroke:#726b7d;stroke-width:1.5}
+.interactive-map .coast{fill:#f7f3e9;stroke:#6b6478;stroke-width:2}
+.interactive-map.has-active [data-zone]{opacity:.24}
+.interactive-map.has-active [data-zone].map-on{opacity:1;fill:#fff0d9;stroke:#e8954a;stroke-width:4;filter:drop-shadow(0 2px 3px rgba(232,149,74,.3))}
+.interactive-map.has-active text[data-zone].map-on{fill:#8c4c13;font-weight:800;opacity:1;filter:none}
+.interactive-map .north{font:700 10px Georgia,serif;fill:#46307d;text-anchor:middle}
+table.exptable{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}table.exptable th,table.exptable td{border:1px solid var(--c-border);padding:8px 10px;vertical-align:top}table.exptable th{background:var(--c-primary-light);color:var(--c-primary-darker)}
+.vex-q{margin:10px 0;font-family:Georgia,serif;font-size:15px}.qno{color:var(--c-primary);font-weight:700;margin-right:4px}.cn-hint{color:var(--c-text-soft);font-size:13.5px;font-family:"Microsoft YaHei",sans-serif;margin-bottom:3px}
+input.ex-in{border:1.5px solid var(--c-border);border-radius:7px;padding:5px 9px;font-family:Georgia,serif;font-size:14.5px;min-width:120px}input.correct{border-color:var(--c-green);background:var(--c-green-bg)}input.wrong{border-color:var(--c-red);background:var(--c-red-bg)}
+.conclusion-line{display:flex;align-items:flex-start;flex-wrap:wrap;gap:5px 7px}.sentence-fragment{padding-top:4px}.fill-unit{display:flex;flex-direction:column;align-items:stretch;margin:0 2px;min-width:150px}.fill-unit .cn-hint{order:2;text-align:center;margin:2px 0 0}.field-feedback{order:3;min-height:18px;font:600 12px "Microsoft YaHei",sans-serif;text-align:center}.field-feedback.good{color:var(--c-green)}.field-feedback.bad{color:var(--c-red)}
+.btn{border:none;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}.btn-primary{background:var(--c-primary);color:#fff}.btn-ghost{background:#fff;border:1.5px solid var(--c-border);color:var(--c-text-soft)}
+.vex-actions{display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap}.ex-score{font-size:14px;font-weight:700}.ok{color:var(--c-green)}.partial{color:var(--c-red)}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.match-item{background:#fff;border:1px solid var(--c-border);border-radius:10px;padding:12px}.match-item select{width:100%;margin-top:8px;border:1.5px solid var(--c-border);border-radius:8px;padding:8px;font-family:inherit}
+@media(max-width:780px){.match-grid{grid-template-columns:1fr}}
+.mcq-list{display:grid;gap:14px}.mcq-card,.sentence-card{border:1px solid var(--c-border);border-radius:8px;background:#fff;padding:15px}.mcq-title{font-weight:700;margin-bottom:9px}.mcq-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mcq-option{display:flex;align-items:flex-start;gap:8px;border:1.5px solid var(--c-border);border-radius:8px;padding:9px 11px;cursor:pointer;font-family:Georgia,serif;line-height:1.45}.mcq-option:hover{border-color:var(--c-primary)}.mcq-option.correct,.sentence-card.correct{border-color:var(--c-green);background:var(--c-green-bg)}.mcq-option.wrong,.sentence-card.wrong{border-color:var(--c-red);background:var(--c-red-bg)}.question-feedback{font-size:12.5px;font-weight:700;min-height:20px;margin-top:7px}.question-feedback.good{color:var(--c-green)}.question-feedback.bad{color:var(--c-red)}
+.sentence-list{display:grid;gap:12px}.hint-row{display:flex;gap:7px;flex-wrap:wrap;margin:7px 0}.hint-chip{background:var(--c-primary-light);color:var(--c-primary-dark);border-radius:6px;padding:3px 8px;font-size:12px;font-weight:700}.sentence-answer{width:100%;border:1.5px solid var(--c-border);border-radius:8px;padding:10px 12px;font:15px Georgia,serif}
+.click-match{display:grid;grid-template-columns:1fr 1fr;gap:18px}.match-column{display:grid;gap:8px;align-content:start}.match-choice{position:relative;width:100%;text-align:left;border:1.5px solid var(--c-border);background:#fff;border-radius:8px;padding:10px 42px 10px 12px;font-family:inherit;line-height:1.45;cursor:pointer}.match-choice.eng{font-family:Georgia,serif}.match-choice:hover,.match-choice.active{border-color:var(--c-primary);background:var(--c-primary-light2)}.match-choice.paired:after{content:attr(data-pair);position:absolute;right:10px;top:50%;transform:translateY(-50%);width:23px;height:23px;border-radius:50%;background:var(--c-primary);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800}.match-choice.correct{border-color:var(--c-green);background:var(--c-green-bg)}.match-choice.wrong{border-color:var(--c-red);background:var(--c-red-bg)}
+@media(max-width:720px){.mcq-options,.click-match{grid-template-columns:1fr}.fill-unit{display:flex;margin:8px 0}.interactive-map .map-label{font-size:11px}}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}.lesson-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.step-card{background:#fff;border:1px solid var(--c-border);border-top:4px solid var(--c-primary);border-radius:8px;padding:13px}.step-card b{display:block;color:var(--c-primary-dark);margin-bottom:4px}.chain{background:var(--c-primary-light2);border:1px dashed var(--c-primary);border-radius:10px;padding:13px 16px;color:var(--c-primary-darker);font-weight:600}.model{background:#fff;border-left:5px solid var(--c-green);padding:14px 17px;border-radius:8px;box-shadow:var(--shadow);margin:12px 0}.model-label{color:var(--c-green);font-size:12px;font-weight:700;margin-bottom:5px}.warning{background:var(--c-red-bg);border-left:5px solid var(--c-red);padding:12px 16px;border-radius:8px;margin:12px 0}.mini-list{margin:7px 0;padding-left:22px}.mini-list li{margin:5px 0}.section-label{font-size:13px;font-weight:700;color:var(--c-primary-dark);text-transform:uppercase;margin:18px 0 7px}.answer-table td:first-child,.answer-table th:first-child{width:145px;font-weight:700}.fold{border:1px solid var(--c-border);border-radius:10px;background:#fff;margin:12px 0;overflow:hidden}.fold summary{cursor:pointer;padding:11px 15px;background:var(--c-primary-light2);font-weight:700;color:var(--c-primary-dark)}.fold>div{padding:14px 17px}.topic-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.topic-head h3{margin:0}.arrow-flow{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.arrow-flow span{background:#fff;border:1px solid var(--c-border);border-radius:8px;padding:7px 10px}.arrow-flow i{color:var(--c-primary);font-style:normal;font-weight:700}
+@media(max-width:900px){.lesson-grid{grid-template-columns:1fr 1fr}}@media(max-width:680px){.two-col,.lesson-grid{grid-template-columns:1fr}}
+.dragsort .pool,.dragsort .zone{display:flex;flex-wrap:wrap;gap:8px;background:var(--c-primary-light2);border:1.5px dashed var(--c-primary);border-radius:10px;padding:12px;min-height:54px}.dragsort .zone{background:#fff;border-color:var(--c-border);margin-top:10px}
+.chunk{background:#fff;border:1.5px solid var(--c-primary);border-radius:8px;padding:8px 12px;font-family:Georgia,serif;font-size:14px;cursor:grab;box-shadow:0 2px 6px rgba(91,63,160,.12)}.chunk.dragging{opacity:.4}.chunk.correct{border-color:var(--c-green);background:var(--c-green-bg)}.chunk.wrong{border-color:var(--c-red);background:var(--c-red-bg)}
+.drag-answer{display:none;margin-top:14px;padding-top:12px;border-top:1px solid var(--c-border);font-size:14px;line-height:1.65}.drag-answer.show{display:block}.drag-answer b{font-family:"Microsoft YaHei",sans-serif;color:var(--c-green);margin-right:8px}
+.wbox{border:1.5px solid var(--c-border);border-radius:10px;background:#fff;margin:12px 0;overflow:hidden}.wbox-head{background:var(--c-primary-light2);padding:8px 14px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--c-border)}
+.wbox-head button{border:1px solid var(--c-border);background:#fff;border-radius:6px;padding:4px 9px;cursor:pointer;font-size:13px;font-family:inherit}.editable{min-height:360px;padding:14px 16px;font-family:Georgia,serif;font-size:15px;outline:none;background:#fff}.editable:empty:before{content:attr(data-placeholder);color:#A39BB5}
+.wbox-foot{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;font-size:12.5px;color:var(--c-text-soft);background:#FBF9FE;border-top:1px solid var(--c-border)}.save-flag{color:var(--c-green);font-weight:700;opacity:0}.save-flag.show{opacity:1}
+.fb-box{margin-top:10px;background:var(--c-orange-bg);border:1px solid var(--c-orange-border);border-radius:8px;padding:10px 14px;font-size:14px;display:none}.fb-box.show{display:block}.fb-title{font-weight:700;color:var(--c-orange);margin-bottom:4px}.fb-content{white-space:pre-line}
+.modal-overlay{position:fixed;inset:0;background:rgba(46,42,56,.55);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}.modal-overlay.open{display:flex}.modal-box{background:#fff;border-radius:16px;padding:28px 26px;max-width:390px;width:100%;box-shadow:var(--shadow-lg);text-align:center}.modal-box h3{margin:0 0 6px;color:var(--c-primary-darker);font-size:18px}.modal-box p{color:var(--c-text-soft);font-size:13.5px;margin:0 0 16px}.modal-box input{width:100%;padding:10px 12px;border:1.5px solid var(--c-border);border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:8px}.modal-err{color:var(--c-red);font-size:12.5px;min-height:16px}.modal-btns{display:flex;gap:10px;margin-top:8px}.modal-btns .btn{flex:1}
+footer{text-align:center;color:var(--c-text-soft);font-size:12.5px;padding:24px 0 36px}
+.harbour-teacher{display:grid;grid-template-columns:minmax(420px,1.05fr) minmax(390px,.95fr);gap:20px;align-items:start}
+.harbour-map-card{position:sticky;top:104px;background:#fff;border:1px solid var(--c-border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.harbour-map-head{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--c-border)}
+.harbour-map-head button{border:1px solid var(--c-border);border-radius:7px;padding:5px 10px;color:var(--c-primary-dark);background:var(--c-primary-light2);cursor:pointer;font-family:inherit}
+.harbour-map-stage{position:relative;line-height:0;background:#fff}.harbour-map-stage img{display:block;width:100%;height:auto}
+.harbour-map-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.harbour-region{fill:transparent;stroke:transparent;stroke-width:0;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;transition:fill .3s,stroke .3s,stroke-width .3s,filter .3s}
+.harbour-region-group{fill:transparent;stroke:transparent}
+.harbour-region.map-on,.harbour-region-group.map-on .harbour-region{fill:rgba(255,212,0,.25);stroke:#FFD400;stroke-width:4;filter:drop-shadow(0 2px 3px rgba(140,104,0,.28))}
+.harbour-map-note{margin:0;padding:8px 12px 10px;text-align:center;color:var(--c-text-soft);font-size:12px}
+.harbour-answer{min-width:0}.harbour-answer-intro{background:var(--c-primary-light2);border:1px solid var(--c-border);border-radius:10px;padding:12px 15px;margin-bottom:14px}
+.harbour-answer-intro b{color:var(--c-primary-darker)}.harbour-answer-intro p{margin:3px 0 0;font-size:13px;color:var(--c-text-soft)}
+.harbour-group{margin:16px 0}.harbour-group h3{display:flex;align-items:center;gap:7px;margin:0 0 7px;color:var(--c-primary-dark);font-size:15px}
+.harbour-group h3 span{display:grid;place-items:center;width:23px;height:23px;border-radius:6px;color:#fff;background:var(--c-primary);font-size:12px}
+.harbour-guide-card{margin:9px 0;padding:13px 15px;border:1px solid var(--c-border);border-radius:10px;background:#fff;font-size:13.5px;line-height:1.65}
+.harbour-guide-card b{color:var(--c-text)}.harbour-guide-card ul{margin:7px 0 0;padding-left:21px}.harbour-guide-card li{margin:4px 0}
+.harbour-formula{margin:9px 0;padding:12px 14px;border:1px solid var(--c-border);border-left:5px solid var(--c-primary);border-radius:9px;background:var(--c-primary-light2);font:14px/1.65 Georgia,"Times New Roman",serif}
+.harbour-pills{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0 12px}.harbour-pills .pill{margin:0}
+.harbour-model-label{margin:12px 0 5px;color:var(--c-green);font-size:12px;font-weight:800;letter-spacing:.04em}
+.harbour-sentence{display:block;width:100%;margin:7px 0;padding:10px 12px;border:1px solid var(--c-border);border-left:4px solid var(--c-border);border-radius:8px;color:var(--c-text);background:#fff;text-align:left;font:14.5px/1.55 Georgia,"Times New Roman",serif;cursor:pointer;transition:.2s}
+.harbour-sentence:hover,.harbour-sentence:focus-visible{border-left-color:var(--c-primary);background:var(--c-primary-light2);outline:none}
+.harbour-sentence.active{border-color:#E4BC00;border-left-color:#E4BC00;background:#FFFBE7;box-shadow:0 0 0 2px rgba(255,212,0,.13)}
+.harbour-explanation{position:sticky;bottom:10px;margin-top:16px;padding:12px 14px;border:1px solid #E8D170;border-radius:9px;background:rgba(255,251,231,.97);box-shadow:var(--shadow)}
+.harbour-explanation b{color:#765D00;font-size:13px}.harbour-explanation p{margin:3px 0 0;color:#625733;font-size:13px}
+@media(max-width:900px){.harbour-teacher{grid-template-columns:1fr}.harbour-map-card{position:relative;top:auto}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo"><span class="badge">闻雅德</span>Vineyard Academy</div>
+    <div class="titleblock"><h1>雅思写作 S5</h1><p>小作文 · 地图题 ｜ 大作文 · Discuss Both Views</p></div>
+  </div>
+  <nav class="tabs">
+    <button data-tab="t1" class="active">① 小作文地图</button>
+    <button data-tab="t2">② 大作文</button>
+    <button data-tab="t3">③ S5 练习与作业</button>
+  </nav>
+</header>
+<main>
+<div class="view active" id="view-t1">
+  <div class="sec">
+    <h2><span class="num">1</span>Part 1 地图题概览</h2>
+    <h3 class="sub">1.1 题型分类</h3>
+    <div class="two-col">
+      <div class="card"><b>动态图（最常见）</b><ul class="mini-list"><li>一个地方：过去 vs 现在（变化对比）</li><li>未来规划 vs 现状</li></ul></div>
+      <div class="card"><b>静态图</b><ul class="mini-list"><li>不同地点的布局对比</li></ul></div>
+    </div>
+    <h3 class="sub">1.2 四段式写作框架</h3>
+    <div class="lesson-grid">
+      <div class="step-card"><b>Paragraph 1</b>说明地图展示了某地的变化或布局；换词改写，不抄原题。</div>
+      <div class="step-card"><b>Paragraph 2</b>概述最主要的变化：什么消失、什么新增、整体趋势。</div>
+      <div class="step-card"><b>Paragraph 3</b>描述原图布局，使用 was / had 等合适时态。</div>
+      <div class="step-card"><b>Paragraph 4</b>描述变化后的内容，用变化动词和方位词串联。</div>
+    </div>
+    <div class="tip-box"><b>目标字数：</b>150-200词；6-6.5分目标建议控制在190词以内。</div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">2</span>Part 2 第一段：改写题目</h2>
+    <h3 class="sub">2.1 写作任务</h3>
+    <p>用自己的话说明地图展示了哪个地方、哪个时间段的变化或布局。不能抄原题，需要换词改写。</p>
+    <h3 class="sub">2.2 常用句式（3选1）</h3>
+    <div class="formula-box eng">
+      <p><b>句式一：</b>The maps illustrate the changes in ... between ... and ...</p>
+      <p><b>句式二：</b>The diagrams show the layout of ... at present and in the future / how it will look ...</p>
+      <p><b>句式三：</b>The maps illustrate the current state of ... and its planned future development.</p>
+    </div>
+    <h3 class="sub">2.3 换词表</h3>
+    <table class="exptable answer-table">
+      <tr><th>功能</th><th>可替换表达</th></tr>
+      <tr><td>展示</td><td class="eng">illustrate / depict / present / demonstrate</td></tr>
+      <tr><td>变化发展</td><td class="eng">transformation / development / redevelopment</td></tr>
+      <tr><td>图纸布局</td><td class="eng">diagram / layout / blueprint</td></tr>
+      <tr><td>现在</td><td class="eng">at present / currently / today / the present day</td></tr>
+    </table>
+    <h3 class="sub">2.4 范例</h3>
+    <div class="interactive-map" data-map-kind="sports" aria-label="University sports centre present and future map"></div>
+    <div class="prompt-box"><div class="pb-head"><strong>原题</strong></div><div class="pb-body eng">The plans below show the layout of a university's sports centre now, and how it will look after redevelopment.</div></div>
+    <div class="model"><div class="model-label">改写 1</div><div class="eng">The diagrams show the layout of a university sports centre at present and in the future.</div></div>
+    <div class="model"><div class="model-label">改写 2</div><div class="eng">The diagrams show the layout of a university sports centre at present and how it is planned to look following redevelopment.</div></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">3</span>Part 3 第二段：Overall（概述）</h2>
+    <h3 class="sub">3.1 写作任务</h3>
+    <p>概述最主要的变化，不需要细节，抓住2-3个最显著特征即可。</p>
+    <h3 class="sub">3.2 常用句式</h3>
+    <div class="formula-box eng">
+      <p><b>替代式：</b>Overall, it is clear that the area witnessed significant changes, with [old facilities] replaced by [new facilities] respectively.</p>
+      <p><b>新增式：</b>The most noticeable change is the construction / removal of [facilities].</p>
+      <p><b>没变 vs 变了：</b>While something will remain largely intact, something is set to be expanded / reduced / removed, with new additions including ...</p>
+    </div>
+    <h3 class="sub">3.3 Overall 常用词汇</h3>
+    <table class="exptable">
+      <tr><th>变化</th><th>表达</th></tr>
+      <tr><td>整体扩展</td><td class="eng">the area expanded significantly / the site was considerably developed</td></tr>
+      <tr><td>变为住宅区</td><td class="eng">was redeveloped into a residential neighbourhood</td></tr>
+      <tr><td>变商业化</td><td class="eng">has become more commercial / has been commercialised</td></tr>
+      <tr><td>现代化</td><td class="eng">has undergone significant modernisation</td></tr>
+      <tr><td>自然区域缩减</td><td class="eng">natural areas were reduced / replaced by man-made structures</td></tr>
+    </table>
+    <h3 class="sub">3.4 范例对比：Sports Centre</h3>
+    <div class="split-layout">
+      <div class="split-img">
+        <div class="interactive-map" data-map-kind="sports" aria-label="University sports centre present and future interactive map"></div>
+      </div>
+      <div class="split-content">
+        <p class="note-cn">点击句子查看对应设施高亮。</p>
+        <div class="click-sent eng" data-target="outdoor">Overall, the most notable change is the removal of both outdoor courts, which will be replaced by a range of new facilities.</div>
+        <div class="click-sent eng" data-target="central">While the central indoor zone will remain largely intact,</div>
+        <div class="click-sent eng" data-target="new">the sports centre is set to expand significantly, with new additions including a leisure pool, a sports hall, and two dance studios.</div>
+      </div>
+    </div>
+    <h3 class="sub">Park — Para 2 Overall</h3>
+    <div class="split-layout">
+      <div class="split-img">
+        <div class="interactive-map" data-map-kind="park" aria-label="Grange Park 1920 and today interactive map"></div>
+      </div>
+      <div class="split-content">
+        <p class="note-cn">点击语句查看相应区域。</p>
+        <div class="click-sent eng" data-target="stage">Overall, it is clear that the park has undergone significant transformation, with the original musical stage and fountain replaced by a large amphitheatre and a water feature.</div>
+        <div class="click-sent eng" data-target="east">The most noticeable additions are a café and a children's play area,</div>
+        <div class="click-sent eng" data-target="carpark">as well as an underground car park, suggesting the park has shifted towards more commercial and family-oriented use.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">4</span>第三段：描述原图布局</h2>
+    <h3 class="sub">4.1 写作步骤（四步循环）</h3>
+    <div class="lesson-grid">
+      <div class="step-card"><b>Step 1</b>先说整体布局（1句）</div>
+      <div class="step-card"><b>Step 2</b>聚焦某一板块，说“这里有什么”</div>
+      <div class="step-card"><b>Step 3</b>用相对位置引出下一个建筑</div>
+      <div class="step-card"><b>Step 4</b>换句式避免重复，再回到 Step 2</div>
+    </div>
+    <h3 class="sub">Park — Para 3（1920年）</h3>
+    <div class="split-layout">
+      <div class="split-img">
+        <div class="interactive-map" data-map-kind="park-old" aria-label="Grange Park in 1920 interactive map"></div>
+      </div>
+      <div class="split-content">
+        <div class="click-sent eng" data-target="entrances2">In 1920, the park was accessed via two entrances on Arnold Avenue to the north and Eldon Street to the south.</div>
+        <div class="click-sent eng" data-target="centre2">At the centre of the park stood a fountain, with a stage for musicians positioned to its west.</div>
+        <div class="click-sent eng" data-target="west2">Three rose gardens were distributed around the western and southern areas, and seating was placed along all four edges.</div>
+        <div class="click-sent eng" data-target="east2">In the eastern section, a glasshouse sat adjacent to the southern entrance, while a pond for water plants occupied the northeastern corner.</div>
+      </div>
+    </div>
+    <h3 class="sub">4.2 Step 1 整体布局句式</h3>
+    <div class="formula-box eng">The ... consisted of ... flanked by ...<br>The area was divided into ... parts by ...<br>The ... featured a ... at its centre, with ... on either side.</div>
+    <h3 class="sub">4.3 Step 2 “这里有什么”句式</h3>
+    <table class="exptable"><tr><th>句式类型</th><th>模板</th><th>例句</th></tr><tr><td>主系表</td><td class="eng">sth is/was + 位置</td><td class="eng">The gym was to the north of the pool.</td></tr><tr><td>There be</td><td class="eng">There was/were ... + 位置</td><td class="eng">At the heart of the building, there was a 25m pool.</td></tr><tr><td>主动 sit/occupy</td><td class="eng">sth sat/occupied ...</td><td class="eng">A gym sat at the northern end of the building.</td></tr><tr><td>被动 located</td><td class="eng">sth was located/situated ...</td><td class="eng">The reception was located at the southern entrance.</td></tr></table>
+    <h3 class="sub">4.4 Step 3-4 相对位置表达系统</h3>
+    <table class="exptable"><tr><th>介词</th><th>含义</th><th>记忆方法</th></tr><tr><td class="eng">in</td><td>A 在 B 内部</td><td>A 被 B 包围</td></tr><tr><td class="eng">on</td><td>A 与 B 接壤</td><td>A 和 B 有共同边界</td></tr><tr><td class="eng">to</td><td>A 与 B 分离</td><td>地图内两建筑之间默认最常用</td></tr></table>
+    <table class="exptable"><tr><th>场景</th><th>表达</th><th>例句</th></tr><tr><td>紧挨着</td><td class="eng">next to / adjacent to / alongside</td><td class="eng">The seating area is adjacent to the pool.</td></tr><tr><td>正对面</td><td class="eng">opposite (to) / facing / on the other side of</td><td class="eng">Shops were located opposite the fish market.</td></tr><tr><td>方向（分离）</td><td class="eng">to the north/south/east/west of</td><td class="eng">The gym is to the north of the pool.</td></tr><tr><td>方向（接壤）</td><td class="eng">on the north/south side of</td><td class="eng">Farmland lies on the north side of the river.</td></tr><tr><td>方向（内部）</td><td class="eng">in the northern/southern section of</td><td class="eng">A café sits in the southern section of the building.</td></tr><tr><td>角落（外）</td><td class="eng">at/on the southeastern corner of</td><td class="eng">A hotel stands at the eastern corner of the junction.</td></tr><tr><td>角落（内）</td><td class="eng">in the southeastern corner of</td><td class="eng">A changing room is in the southeastern corner.</td></tr><tr><td>交汇处</td><td class="eng">at the junction/joint of</td><td class="eng">A hotel sat at the junction of the two roads.</td></tr><tr><td>沿线</td><td class="eng">along the river / along the road</td><td class="eng">Houses were built along both sides of the road.</td></tr><tr><td>围绕</td><td class="eng">surrounding / encircling</td><td class="eng">A road surrounded the housing area.</td></tr></table>
+    <h3 class="sub">4.5 四种组合句式（LR 加分）</h3>
+    <div class="card eng"><p><b>1. 介词短语 + there be：</b>Opposite to the market, there was a block of shops on the other side of the road.</p><p><b>2. 介词短语 + sit/lie/occupy：</b>East of the shops, a hotel and a café sat at the junction of the two roads.</p><p><b>3. 非谓语作状语：</b>Flanking the central pool on either side, two outdoor courts extended to the east and west.</p><p><b>4. 定语从句带出新事物：</b>The fish market, which was located near the port, sat just south of the main road.</p></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">5</span>Part 5 第四段：描述变化</h2>
+    <h3 class="sub">5.1 核心差异</h3>
+    <div class="formula-box"><b>第三段：</b>说清楚“在哪里有什么”。<br><b>第四段：</b>说清楚“在哪里，什么变成了什么”。<br><b>每句结构：</b>[位置定位] + [原来是什么] + [变化动词] + [现在是什么]</div>
+    <h3 class="sub">Park — Para 4（变化）</h3>
+    <div class="split-layout">
+      <div class="split-img"><div class="interactive-map" data-map-kind="park-new" aria-label="Grange Park today interactive map"></div></div>
+      <div class="split-content">
+        <div class="click-sent eng" data-target="west3">By the present day, the park has been considerably redesigned. To the west, the stage for musicians has been replaced by a large amphitheatre for concerts, which now dominates the western section. A single rose garden is retained in the northwestern corner.</div>
+        <div class="click-sent eng" data-target="centre3">In the centre, the fountain has been removed and a new rose garden constructed in its place, surrounded by seating on all sides.</div>
+        <div class="click-sent eng" data-target="east3">As for the eastern section, both the glasshouse and the pond have been removed, replaced by a café in the northeast, a children's play area to its east, and a water feature to the south.</div>
+        <div class="click-sent eng" data-target="car3">Outside the southern entrance, a new entrance to an underground car park has been added.</div>
+      </div>
+    </div>
+    <h3 class="sub">5.2 变化动词词库</h3>
+    <table class="exptable"><tr><th>类型</th><th>动词 / 短语</th><th>例句</th></tr><tr><td>拆除</td><td class="eng">was demolished / was torn down / was removed / was knocked down</td><td class="eng">The outdoor court was demolished entirely.</td></tr><tr><td>新建</td><td class="eng">was constructed / was built / was added / was introduced</td><td class="eng">A sports hall was newly constructed to the east.</td></tr><tr><td>扩建</td><td class="eng">was enlarged / was extended / was expanded</td><td class="eng">The gym will be extended eastward.</td></tr><tr><td>改建</td><td class="eng">was converted into / was replaced by / was redeveloped into / was transformed into</td><td class="eng">The factory was converted into a residential area.</td></tr><tr><td>不变</td><td class="eng">remained unchanged / was retained / remained as it was / stayed the same</td><td class="eng">The 25m pool will remain unchanged.</td></tr></table>
+    <h3 class="sub">5.3 段内衔接词</h3>
+    <table class="exptable"><tr><th>功能</th><th>表达</th></tr><tr><td>转移到新区域</td><td class="eng">Turning to ... / Moving to the eastern side ... / As for the northern section ...</td></tr><tr><td>并列同类变化</td><td class="eng">Similarly / Likewise / In addition / Also</td></tr><tr><td>转折</td><td class="eng">However / While ... remains unchanged / That said</td></tr><tr><td>收尾</td><td class="eng">Finally / To complete the transformation</td></tr></table>
+    <div class="warning">“转移区域”和“并列变化”使用的衔接词不同，混用是 CC 失分点。</div>
+    <h3 class="sub">5.4 四种高分句式</h3>
+    <div class="card eng"><p><b>1. 位置词 + 变化动词：</b>In the southern area, the fishing port was demolished, and the fish market was replaced by apartments.</p><p><b>2. Replacing + 原事物：</b>Replacing the former shops along the roadside, several restaurants now occupy the same location.</p><p><b>3. Where + 原位置描述：</b>Where the fishing port once stood, the coastline has been cleared entirely.</p><p><b>4. While / Whereas：</b>While the 25-metre pool and changing room remain intact, the gym has been extended eastward.</p></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">6</span>Harbour 分段写作引导</h2>
+    <div class="harbour-teacher">
+      <div class="harbour-map-card" id="harbourMapCard">
+        <div class="harbour-map-head"><strong>原题地图</strong><button type="button" id="harbourClear">清除高亮</button></div>
+        <div class="harbour-map-stage">
+          <img src="s5_assets/harbour.png" alt="Porth Harbour in 2000 and today">
+          <svg class="harbour-map-overlay" viewBox="0 0 1032 1396" aria-hidden="true">
+            <path id="h_main_road_2000" class="harbour-region" d="M77 80H102V307H166V320H102V607C139 605 171 601 199 596V537H212V593C305 576 401 554 498 535C544 526 581 512 608 492L619 507C588 530 548 545 503 553C405 573 306 596 212 613C171 620 135 623 102 624V671H77Z"/>
+            <path id="h_showers_2000" class="harbour-region" d="M165 220H263V276H165Z"/>
+            <path id="h_car_north_2000" class="harbour-region" d="M165 286H263V342H165Z"/>
+            <path id="h_marina_2000" class="harbour-region" d="M277 220H364V253H390V307H364V340H277Z"/>
+            <path id="h_car_south_2000" class="harbour-region" d="M164 441H263V537H164Z"/>
+            <path id="h_fishing_2000" class="harbour-region" d="M277 376H390V537H277Z"/>
+            <path id="h_dock_2000" class="harbour-region" d="M580 151L640 146L692 196L747 288L713 306L672 251L647 270L599 304L558 225L574 212L595 246L648 210Z"/>
+            <path id="h_ferries_2000" class="harbour-region" d="M657 257L671 254L724 291L739 317L729 324L711 319L666 286L655 270Z"/>
+            <path id="h_beach_north_2000" class="harbour-region" d="M704 82C716 105 724 127 730 151C735 174 746 197 759 219L791 273L746 290C730 257 714 228 700 199C685 167 684 122 688 87Z"/>
+            <rect id="h_lifeboat_2000" class="harbour-region" x="568" y="468" width="105" height="34"/>
+            <path id="h_road_2000" class="harbour-region" d="M102 607C177 602 250 588 326 573C409 556 480 538 531 524C565 515 590 502 608 488L619 502C598 520 571 534 536 543C484 558 413 576 330 592C253 608 179 621 102 625Z"/>
+            <path id="h_beach_south_2000" class="harbour-region" d="M536 586C582 577 625 573 660 576C699 579 726 598 751 619C762 629 773 637 785 641L773 658C755 652 741 643 728 632C707 615 685 600 656 598C622 596 584 602 542 610Z"/>
+            <path id="h_castle_2000" class="harbour-region" d="M775 514H822L853 546V594L822 625H775L743 594V546Z"/>
+            <path id="h_main_road_today" class="harbour-region" d="M76 787H101V1015H164V1028H101V1190H164V1204H101V1316C177 1310 252 1296 328 1281C411 1264 482 1246 526 1234C554 1227 580 1214 603 1196L615 1211C590 1232 561 1246 531 1253C486 1266 414 1284 332 1301C254 1317 178 1331 101 1335V1379H76Z"/>
+            <path id="h_showers_north_today" class="harbour-region" d="M164 928H262V983H164Z"/>
+            <path id="h_car_north_today" class="harbour-region" d="M164 994H262V1051H164Z"/>
+            <path id="h_fishing_today" class="harbour-region" d="M277 928H363V961H389V1016H363V1050H277Z"/>
+            <path id="h_showers_south_today" class="harbour-region" d="M163 1082H262V1138H163Z"/>
+            <path id="h_car_south_today" class="harbour-region" d="M163 1149H263V1205H163Z"/>
+            <path id="h_marina_today" class="harbour-region" d="M277 1083H390V1245H277Z"/>
+            <g id="h_dock_today" class="harbour-region-group">
+              <path class="harbour-region" d="M389 904C390 889 398 879 411 874L473 861L561 1025L509 1056L473 1000L454 1010L496 1065L448 1080L389 963Z"/>
+              <path class="harbour-region" d="M580 855L640 850L692 901L747 992L713 1011L672 956L646 974L599 1009L558 929L574 916L596 950L648 914Z"/>
+            </g>
+            <path id="h_ferries_today" class="harbour-region" d="M657 962L671 958L724 996L739 1022L729 1029L711 1024L666 991L655 975Z"/>
+            <path id="h_beach_north_today" class="harbour-region" d="M704 788C716 810 724 832 730 856C735 879 746 902 759 924L791 978L746 995C730 962 714 933 700 904C685 872 684 827 688 792Z"/>
+            <rect id="h_cafes_shops" class="harbour-region" x="392" y="1172" width="164" height="35"/>
+            <rect id="h_lifeboat_today" class="harbour-region" x="568" y="1173" width="105" height="35"/>
+            <path id="h_private_beach_today" class="harbour-region" d="M536 1290C582 1281 625 1277 660 1280C699 1283 726 1302 751 1323C762 1333 773 1341 785 1345L773 1362C755 1356 741 1347 728 1336C707 1319 685 1304 656 1302C622 1300 584 1306 542 1314Z"/>
+            <path id="h_hotel_today" class="harbour-region" d="M774 1222H822L853 1254V1302L822 1334H774L742 1302V1254Z"/>
+          </svg>
+        </div>
+        <p class="harbour-map-note">原图保持不变；黄色仅来自透明交互层。</p>
+      </div>
+      <div class="harbour-answer">
+        <div class="harbour-answer-intro"><b>范文逐句定位</b><p>点击范文句子，查看它描述的过去与现在。</p></div>
+        <div class="harbour-group">
+          <h3><span>1</span>Introduction</h3>
+          <button class="harbour-sentence" type="button" data-target="h_main_road_2000 h_main_road_today" data-explanation="本句交代同一港口的两个时间点；主干道帮助确认地图方向。">The maps illustrate how Porth Harbour changed between 2000 and the present day.</button>
+        </div>
+        <div class="harbour-group">
+          <h3><span>2</span>Overview</h3>
+          <div class="harbour-guide-card"><b>内容提示</b><ul>
+            <li>最大变化：disused castle → hotel（东南侧）</li>
+            <li>新增：cafés &amp; shops、additional showers &amp; toilets、new dock、private beach</li>
+            <li>整体趋势：港口变得更商业化（more commercial）</li>
+            <li>使用 replaced by / with new ... added 串联</li>
+          </ul></div>
+          <div class="harbour-formula">Overall, ... the harbour has become significantly more commercial, with ... replaced by ... and ... added along ...<br>The most noticeable change is ... while ... remains unchanged.</div>
+          <div class="harbour-pills"><span class="pill">disused castle 废弃城堡</span><span class="pill">visitor facilities 访客设施</span><span class="pill">commercial 商业化的</span></div>
+          <div class="harbour-model-label">可点击范文句</div>
+          <button class="harbour-sentence" type="button" data-target="h_castle_2000 h_hotel_today h_beach_south_2000 h_private_beach_today" data-explanation="东南部最显著的变化：废弃城堡改建成酒店，旁边的公共海滩改为酒店专用海滩。">Overall, the harbour has become more commercial, with the disused castle replaced by a hotel and the southern public beach made private.</button>
+          <button class="harbour-sentence" type="button" data-target="h_cafes_shops h_showers_south_today h_dock_today" data-explanation="概述新增设施：咖啡馆和商店、第二组淋浴卫生间，以及额外码头。">Several visitor facilities have also been added, including cafés and shops, another shower block and an additional dock.</button>
+        </div>
+        <div class="harbour-group">
+          <h3><span>3</span>Porth Harbour in 2000</h3>
+          <div class="harbour-guide-card"><b>任务：</b>先用一句话说整体特征，再按西侧 → 东北 → 东南描述。<ul>
+            <li>整体：沿西侧主干道分成两个功能区</li>
+            <li>北区：Marina for private yachts；西侧 showers/toilets 和 car park</li>
+            <li>南区：Fishing boats area；西侧 car park</li>
+            <li>中央：Lifeboat station 沿 shore road</li>
+            <li>东北：Dock for passenger ferries；更北是公共海滩</li>
+            <li>东南：Disused castle 在海边；公共海滩在其西侧</li>
+            <li>2000年只有 marina 旁有 showers/toilets</li>
+          </ul></div>
+          <div class="harbour-formula">In 2000, the harbour featured two distinct zones along the western main road.<br>In the northern zone, ... sat at the waterfront, with ... to its west.<br>To the south, ..., with ... alongside it.<br>On the southeast side, ... sat on the shore, with ... to its west.</div>
+          <div class="harbour-pills"><span class="pill">marina for private yachts</span><span class="pill">lifeboat station</span><span class="pill">passenger ferries</span><span class="pill">disused</span><span class="pill">feeder road</span></div>
+          <div class="harbour-model-label">可点击范文句</div>
+          <button class="harbour-sentence" type="button" data-target="h_marina_2000 h_showers_2000 h_car_north_2000" data-explanation="2000 年西北部：私人游艇码头在水边，淋浴卫生间和停车场位于它的西侧。">In 2000, a marina for private yachts occupied the north-western waterfront, with showers, toilets and a car park immediately to its west.</button>
+          <button class="harbour-sentence" type="button" data-target="h_fishing_2000 h_car_south_2000" data-explanation="2000 年西南部：渔船区位于水边，第二个停车场在其西侧。">Further south, an area for fishing boats stood beside a second car park.</button>
+          <button class="harbour-sentence" type="button" data-target="h_dock_2000 h_ferries_2000 h_beach_north_2000" data-explanation="东北部：一个码头服务客运渡轮，北侧海岸是公共海滩。">In the north-east, a dock served passenger ferries, while a public beach lay farther north.</button>
+          <button class="harbour-sentence" type="button" data-target="h_lifeboat_2000 h_road_2000 h_castle_2000 h_beach_south_2000" data-explanation="南侧海岸：救生艇站靠近道路；废弃城堡位于东南端，公共海滩在其西侧。">A lifeboat station stood beside the coastal road, and a disused castle occupied the south-eastern shore next to another public beach.</button>
+        </div>
+        <div class="harbour-group">
+          <h3><span>4</span>Porth Harbour today</h3>
+          <div class="harbour-guide-card"><b>顺序：</b>西侧 → 东南 → 西北 → 东北。<ul>
+            <li>Fishing boats 和 Marina 互换位置</li>
+            <li>Marina 新位置南边新增 showers &amp; toilets</li>
+            <li>每个 car park 各有支路连接主干道</li>
+            <li>Hotel 西北方向沿海岸新增 cafés &amp; shops；Lifeboat station 不变</li>
+            <li>Disused castle → hotel；公共海滩 → 酒店私人海滩</li>
+            <li>东北公共海滩保留；新增 dock 容纳更多 passenger ferries</li>
+          </ul></div>
+          <div class="harbour-formula">By the present day, the harbour has changed considerably.<br>The fishing boats and marina have switched locations, moving to the ... and ... respectively.<br>Each car park is now linked to the main road by its own feeder road.<br>On the southeast, ... has been replaced by ..., and ... converted into ...<br>To the northeast, ... is retained, though a new dock has been added for ...</div>
+          <div class="harbour-pills"><span class="pill">switch locations</span><span class="pill">converted into a private one</span><span class="pill">remains unchanged</span><span class="pill">accommodate</span><span class="pill">linked to ... by ...</span></div>
+          <div class="harbour-model-label">可点击范文句</div>
+          <button class="harbour-sentence" type="button" data-target="h_marina_2000 h_fishing_2000 h_marina_today h_fishing_today" data-explanation="两组区域互换：渔船移到原码头的北部位置，私人游艇码头移到原渔船区。">Today, the fishing boats and the private-yacht marina have switched locations.</button>
+          <button class="harbour-sentence" type="button" data-target="h_showers_2000 h_showers_north_today h_showers_south_today h_car_north_today h_car_south_today h_main_road_today" data-explanation="原有北侧设施保留，南侧新增一组淋浴卫生间；两个停车场均由支路连接主路。">The original shower block remains, a second one has been built to the south, and both car parks are now linked to the main road.</button>
+          <button class="harbour-sentence" type="button" data-target="h_cafes_shops h_lifeboat_2000 h_lifeboat_today" data-explanation="海岸道路旁新增咖啡馆和商店，而救生艇站位置不变。">Cafés and shops have been constructed beside the road, whereas the lifeboat station remains unchanged.</button>
+          <button class="harbour-sentence" type="button" data-target="h_castle_2000 h_hotel_today h_beach_south_2000 h_private_beach_today" data-explanation="用 has been replaced by 与 has been converted into 描述东南部的两项改建。">The castle has been replaced by a hotel, and the nearby public beach has been converted into a private beach for hotel guests.</button>
+          <button class="harbour-sentence" type="button" data-target="h_dock_2000 h_dock_today h_ferries_2000 h_ferries_today h_beach_north_2000 h_beach_north_today" data-explanation="东北部公共海滩保留；码头数量增加，为客运渡轮提供更多泊位。">Finally, the northern public beach has been retained, while a new dock has been added for passenger ferries.</button>
+        </div>
+        <div class="harbour-explanation" id="harbourExplanation" role="status" aria-live="polite"><b>句图对应说明</b><p>点击任意范文句子开始。</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="view" id="view-t2">
+  <div class="sec">
+    <h2><span class="num">1</span>Discuss Both Views 题目与完整模板</h2>
+    <div class="prompt-box"><div class="pb-head"><strong>WRITING TASK 2</strong><span class="pb-tag">课堂题</span></div><div class="pb-body eng">Some people think that competition at work, at school and in daily life is a good thing. Others believe that we should try to cooperate more, rather than competing against each other.<br><br>Discuss both these views and give your own opinion.</div></div>
+    <h3 class="sub">Introduction（三句话结构）</h3>
+    <div class="lesson-grid"><div class="step-card"><b>句1 Background</b><span class="eng">In recent years, the issue of [topic] has sparked widespread debate.</span></div><div class="step-card"><b>句2 两方观点</b><span class="eng">Some people argue that [A], while others maintain that [B].</span></div><div class="step-card"><b>Task Preview</b><span class="eng">This essay will examine both perspectives before presenting my own view.</span></div><div class="step-card"><b>句3 Personal Stance</b><span class="eng">Personally, I am inclined to agree with the former / latter view.</span></div></div>
+    <div class="warning"><b>Task Preview 不能省：</b>题目要求 Discuss BOTH views；缺少任务预告会削弱 Task Response。个人立场应有倾向，不建议写 both perspectives have their own merits。former 指观点 A，latter 指观点 B。</div>
+    <h3 class="sub">Body Paragraph 1：你不完全支持的一边</h3>
+    <div class="formula-box eng">On the one hand, some argue that [View A].<br>One convincing reason is that [Reason 1].<br>In addition, [Reason 2 + example / explanation].<br>That said, this perspective alone may not tell the whole story.</div>
+    <p class="note-cn">轻收束句表示“我理解这一边，但仍有保留”，并为下一段的倾向观点做过渡。</p>
+    <h3 class="sub">Body Paragraph 2：你倾向支持的一边</h3>
+    <div class="formula-box eng">On the other hand, critics of this view point out that [View B].<br>They argue that [Reason 1 + development].<br>Moreover, from a long-term perspective, [Reason 2 + example / explanation].<br>Therefore, I tend to believe that this argument is more compelling.</div>
+    <p class="note-cn">BP2 必须放你倾向支持的观点；Therefore 收束句是完成 give your own opinion 的关键信号。</p>
+    <h3 class="sub">Conclusion</h3>
+    <div class="formula-box eng">In conclusion, although [View A — noun form] may offer certain short-term advantages, I firmly believe that [View B — noun form] is more beneficial for [group / society] in the long run.</div>
+    <p class="note-cn">结尾用名词形式概括观点，不重复原句，也不引入新观点或新例子。</p>
+  </div>
+  <div class="sec">
+    <h2><span class="num">2</span>开头段写作</h2>
+    <p><b>背景话题：</b>从题目提取可直接放入句子的名词短语。</p>
+    <div class="card"><p class="eng">In recent years, the issue of <b>competition and cooperation</b> has sparked widespread debate.</p><p class="note-cn">合理选择是 competition and cooperation 或 whether to compete or to cooperate；people are going to compete 不是合适的名词话题。</p></div>
+    <p><b>双方观点：</b>不要整句照抄题目，要挑选核心信息重组。</p>
+    <details class="fold"><summary>展开开头段范文</summary><div class="eng">Some people argue that people should compete with each other, while others maintain that cooperation has its own advantages.<br>This essay will examine both perspectives before presenting my own view.<br>Personally, I am inclined to agree with the former / latter view.</div></details>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">3</span>观点库：Competition</h2>
+    <h3 class="sub">Efficiency / Productivity</h3>
+    <table class="exptable answer-table"><tr><th>思路</th><th>表达</th></tr><tr><td>Core Benefit</td><td class="eng">greater operational efficiency and higher standards of output across industries</td></tr><tr><td>动词建议</td><td class="eng">promotes / leads to / gives rise to</td></tr><tr><td>Why（机制）</td><td class="eng">when businesses compete for customers and market share, they are incentivised to reduce costs, improve quality, and innovate continuously in order to survive</td></tr><tr><td>Example</td><td class="eng">the rivalry between Apple and Samsung in the smartphone industry has produced rapid technological advancement, benefiting consumers with better products at increasingly competitive prices</td></tr><tr><td>Long-term</td><td class="eng">competitive markets drive sustained innovation and raise the overall quality of goods and services available to the public</td></tr></table>
+    <div class="chain">市场竞争存在 → 企业必须提升产品质量和效率才能存活 → 消费者获得更好的产品和更低的价格 → 整体行业标准和创新速度持续提升</div>
+    <h3 class="sub">Personal Growth</h3>
+    <table class="exptable answer-table"><tr><th>思路</th><th>表达</th></tr><tr><td>Core Benefit</td><td class="eng">enhanced emotional resilience and a stronger capacity to handle failure and adversity</td></tr><tr><td>动词建议</td><td class="eng">fosters / builds / strengthens</td></tr><tr><td>Why（机制）</td><td class="eng">facing competition exposes individuals to setbacks and defeat, teaching them to regulate their emotions, persist under pressure, and develop a growth mindset</td></tr><tr><td>Example</td><td class="eng">athletes who compete at a high level, such as Olympic participants, consistently report that losing competitions taught them more about discipline and self-improvement than winning</td></tr><tr><td>Long-term</td><td class="eng">individuals who have experienced competitive environments are better equipped to navigate professional challenges and recover from failure throughout their lives</td></tr></table>
+    <div class="chain">个人参与竞争并经历失败 → 被迫反思不足、调整策略 → 抗压能力和心理韧性增强 → 在职业和生活中面对逆境时更具适应力</div>
+    <details class="fold" open><summary>Competition 范文：理由 1</summary><div class="eng"><p>On the one hand, some argue that competition is largely beneficial for society.</p><p>One convincing reason is that competition promotes greater operational efficiency and higher standards of output across industries. When businesses compete for customers and market share, they are incentivised to reduce costs, improve quality, and innovate continuously in order to survive. For example, the rivalry between Apple and Samsung in the smartphone industry has produced rapid technological advancement, benefiting consumers with better products at increasingly competitive prices.</p></div></details>
+    <div class="vex dragsort" data-vexid="chunk_competition" data-order="0,1,2,3,4,5,6,7">
+      <h4 class="sub2">Competition 范文：理由二语块拖拽</h4>
+      <p class="note-cn">拖动或点击语块，将其移到下方并组成文档中的完整理由二。</p>
+      <div class="pool">
+        <span class="chunk" draggable="true" data-idx="5">persist under pressure,</span>
+        <span class="chunk" draggable="true" data-idx="1">competition fosters enhanced emotional resilience</span>
+        <span class="chunk" draggable="true" data-idx="7">For instance, athletes who compete at a high level, such as Olympic participants, consistently report that losing competitions taught them more about discipline and self-improvement than winning.</span>
+        <span class="chunk" draggable="true" data-idx="3">Facing competition exposes individuals to setbacks and defeat,</span>
+        <span class="chunk" draggable="true" data-idx="0">In addition,</span>
+        <span class="chunk" draggable="true" data-idx="6">and develop a growth mindset.</span>
+        <span class="chunk" draggable="true" data-idx="2">and a stronger capacity to handle failure and adversity.</span>
+        <span class="chunk" draggable="true" data-idx="4">teaching them to regulate their emotions,</span>
+      </div>
+      <div class="zone" aria-label="Competition answer area"></div>
+      <div class="vex-actions"><button class="btn btn-primary drag-check">检查</button><button class="btn btn-ghost drag-redo">清空</button><span class="ex-score"></span></div>
+      <div class="drag-answer eng"><b>正确答案</b>In addition, competition fosters enhanced emotional resilience and a stronger capacity to handle failure and adversity. Facing competition exposes individuals to setbacks and defeat, teaching them to regulate their emotions, persist under pressure, and develop a growth mindset. For instance, athletes who compete at a high level, such as Olympic participants, consistently report that losing competitions taught them more about discipline and self-improvement than winning.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">4</span>观点库：Cooperation</h2>
+    <h3 class="sub">Mental Health</h3>
+    <table class="exptable answer-table"><tr><th>思路</th><th>表达</th></tr><tr><td>Core Benefit</td><td class="eng">improved psychological well-being and a reduced sense of isolation among individuals</td></tr><tr><td>动词建议</td><td class="eng">provides / supports / contributes to</td></tr><tr><td>Why（机制）</td><td class="eng">cooperative environments reduce the chronic stress associated with constant performance comparison, allowing individuals to feel valued for their contributions rather than judged solely by their ranking</td></tr><tr><td>Example</td><td class="eng">research in organisational psychology shows that employees in collaborative workplaces report significantly lower levels of burnout and higher job satisfaction compared to those in highly competitive corporate cultures</td></tr><tr><td>Long-term</td><td class="eng">workplaces and schools that foster cooperation produce healthier, more motivated individuals who sustain their performance over the long term rather than burning out under competitive pressure</td></tr></table>
+    <div class="chain">合作型环境取代竞争型环境 → 个人不再持续与他人比较，压力来源减少 → 焦虑感和职业倦怠显著下降 → 长期心理健康水平提升，持续生产力增强</div>
+    <h3 class="sub">Education / Career</h3>
+    <table class="exptable answer-table"><tr><th>思路</th><th>表达</th></tr><tr><td>Core Benefit</td><td class="eng">a broader and more diverse exchange of knowledge that accelerates collective learning and problem-solving</td></tr><tr><td>动词建议</td><td class="eng">enables / facilitates / gives rise to</td></tr><tr><td>Why（机制）</td><td class="eng">cooperation allows individuals with different skills, backgrounds, and perspectives to pool their expertise, producing solutions and innovations that no single person could generate independently</td></tr><tr><td>Example</td><td class="eng">the development of the COVID-19 vaccines within a record timeframe was made possible by unprecedented international scientific cooperation, with researchers across dozens of countries sharing data, resources, and findings in real time</td></tr><tr><td>Long-term</td><td class="eng">in an increasingly complex world, cooperative approaches to education and professional life produce more well-rounded, adaptable individuals and faster collective progress</td></tr></table>
+    <div class="chain">合作框架建立，不同背景的人共同参与 → 知识和技能的互补效应产生 → 问题解决速度和创新质量大幅提升 → 个人和集体的学习成果均超过单独竞争的水平</div>
+    <div class="vex dragsort" data-vexid="chunk_cooperation" data-order="0,1,2,3,4">
+      <h4 class="sub2">Cooperation 范文：理由一语块拖拽</h4>
+      <p class="note-cn">拖动或点击语块，将其移到下方并组成文档中的完整理由一。</p>
+      <div class="pool">
+        <span class="chunk" draggable="true" data-idx="3">allowing individuals to feel valued for their contributions rather than judged solely by their ranking.</span>
+        <span class="chunk" draggable="true" data-idx="0">On the other hand, critics of this view point out that cooperation may be a more desirable approach in many areas of life.</span>
+        <span class="chunk" draggable="true" data-idx="4">Research in organisational psychology shows that employees in collaborative workplaces report significantly lower levels of burnout and higher job satisfaction compared to those in highly competitive corporate cultures.</span>
+        <span class="chunk" draggable="true" data-idx="2">Cooperative environments reduce the chronic stress associated with constant performance comparison,</span>
+        <span class="chunk" draggable="true" data-idx="1">They argue that cooperation provides improved psychological well-being and a reduced sense of isolation among individuals.</span>
+      </div>
+      <div class="zone" aria-label="Cooperation answer area"></div>
+      <div class="vex-actions"><button class="btn btn-primary drag-check">检查</button><button class="btn btn-ghost drag-redo">清空</button><span class="ex-score"></span></div>
+      <div class="drag-answer eng"><b>正确答案</b>On the other hand, critics of this view point out that cooperation may be a more desirable approach in many areas of life. They argue that cooperation provides improved psychological well-being and a reduced sense of isolation among individuals. Cooperative environments reduce the chronic stress associated with constant performance comparison, allowing individuals to feel valued for their contributions rather than judged solely by their ranking. Research in organisational psychology shows that employees in collaborative workplaces report significantly lower levels of burnout and higher job satisfaction compared to those in highly competitive corporate cultures.</div>
+    </div>
+    <details class="fold" open><summary>Cooperation 范文：理由 2</summary><div class="eng">Moreover, from a long-term perspective, cooperation enables a broader and more diverse exchange of knowledge that accelerates collective learning and problem-solving. Cooperation allows individuals with different skills, backgrounds, and perspectives to pool their expertise, producing solutions and innovations that no single person could generate independently. For example, the development of the COVID-19 vaccines within a record timeframe was made possible by unprecedented international scientific cooperation, with researchers across dozens of countries sharing data, resources, and findings in real time.<br><br>Therefore, I tend to believe that this argument is more compelling.</div></details>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">5</span>结尾段练习</h2>
+    <div class="vex fill-exercise" data-vexid="conclusion_fill">
+      <div class="vex-q eng conclusion-line"><span class="sentence-fragment">In conclusion, although</span>
+        <span class="fill-unit"><input class="ex-in" data-ans="competition"><span class="cn-hint">竞争</span><span class="field-feedback"></span></span>
+        <span class="sentence-fragment">may offer certain short-term advantages, I firmly believe that</span>
+        <span class="fill-unit"><input class="ex-in" data-ans="cooperation"><span class="cn-hint">合作</span><span class="field-feedback"></span></span>
+        <span class="sentence-fragment">is more beneficial for</span>
+        <span class="fill-unit"><input class="ex-in" data-ans="individuals and society"><span class="cn-hint">个人和社会</span><span class="field-feedback"></span></span>
+        <span class="sentence-fragment">in the long run.</span>
+      </div>
+      <div class="vex-actions"><button class="btn btn-primary ex-check">检查</button><button class="btn btn-ghost ex-redo">清空</button><span class="ex-score"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="view" id="view-t3">
+  <div class="sec">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+      <h2 style="margin:0;border:none;padding:0"><span class="num">★</span>S5 练习与作业</h2>
+      <span class="note-cn" id="studentTag" style="background:var(--c-primary-light);padding:5px 14px;border-radius:20px"></span>
+    </div>
+    <p class="note-cn">本部分练习与作业会记录到老师的统计后台；首次进入会要求填写姓名。</p>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">1</span>小作文中译英选择题</h2>
+    <p class="note-cn">共12题。每题只有一个正确答案。</p>
+    <div class="vex" id="mapMcq" data-vexid="map_mcq"><div class="mcq-list"></div><div class="vex-actions"><button class="btn btn-primary mcq-check">检查</button><button class="btn btn-ghost mcq-redo">清空</button><span class="ex-score"></span></div></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">2</span>地图题被动语态写句子</h2>
+    <p class="note-cn">共7题。根据中文，使用指定动词的被动语态写出完整英文句子。</p>
+    <div class="vex" id="passiveWriting" data-vexid="passive_writing"><div class="sentence-list"></div><div class="vex-actions"><button class="btn btn-primary sentence-check">检查</button><button class="btn btn-ghost sentence-redo">清空</button><span class="ex-score"></span></div></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">3</span>大作文好词好句中英匹配</h2>
+    <p class="note-cn">共10组。先点击左侧英文，再点击右侧中文；完成后统一检查并显示正确率。</p>
+    <div class="vex" id="essayClickMatch" data-vexid="essay_match"><div class="click-match"><div class="match-column match-left"></div><div class="match-column match-right"></div></div><div class="vex-actions"><button class="btn btn-primary click-match-check">检查答案</button><button class="btn btn-ghost click-match-redo">重新练习</button><span class="ex-score"></span></div></div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">4</span>小作文作业：Harbour 地图题</h2>
+    <div class="split-layout homework-layout">
+      <div class="split-img homework-map">
+        <img class="course-img" src="s5_assets/harbour.png" alt="Porth Harbour in 2000 and today">
+      </div>
+      <div class="split-content homework-writing">
+        <div class="prompt-box"><div class="pb-head"><strong>WRITING TASK 1</strong><span class="pb-tag">作业</span></div><div class="pb-body eng">The plans below show a harbour in 2000 and how it looks today.<br><br>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</div></div>
+        <div class="wbox" data-essay="hw_harbour"><div class="wbox-head"><button data-cmd="bold"><b>B</b></button><button data-cmd="underline"><u>U</u></button><button data-cmd="removeFormat">清除格式</button><button class="essay-save">保存</button><button class="essay-clear">清空</button></div><div class="editable eng" contenteditable="true" data-placeholder="请在此完成至少150词的小作文..."></div><div class="wbox-foot"><span class="wc">0 words</span><span class="save-flag">已保存 ✓</span></div></div>
+        <div class="fb-box" data-fb="hw_harbour"><div class="fb-title">老师反馈</div><div class="fb-content"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2><span class="num">5</span>大作文作业：竞争与合作</h2>
+    <div class="prompt-box"><div class="pb-head"><strong>WRITING TASK 2</strong><span class="pb-tag">作业</span></div><div class="pb-body eng">Some people think that competition at work, at school and in daily life is a good thing. Others believe that we should try to cooperate more, rather than competing against each other.<br><br>Discuss both these views and give your own opinion.</div></div>
+    <div class="wbox" data-essay="hw_competition_cooperation"><div class="wbox-head"><button data-cmd="bold"><b>B</b></button><button data-cmd="underline"><u>U</u></button><button data-cmd="removeFormat">清除格式</button><button class="essay-save">保存</button><button class="essay-clear">清空</button></div><div class="editable eng" contenteditable="true" data-placeholder="请在此完成至少250词的大作文..."></div><div class="wbox-foot"><span class="wc">0 words</span><span class="save-flag">已保存 ✓</span></div></div>
+    <div class="fb-box" data-fb="hw_competition_cooperation"><div class="fb-title">老师反馈</div><div class="fb-content"></div></div>
+  </div>
+</div>
+</main>
+<footer>Vineyard Academy · 闻雅德国际教育 — 雅思写作 S5</footer>
+
+<div class="modal-overlay" id="nameModal">
+  <div class="modal-box">
+    <h3>开始 S5 练习</h3>
+    <p>老师会通过姓名查看练习与作业完成情况，请先填写你的姓名（或学号+姓名）。</p>
+    <input type="text" id="nameModalInput" placeholder="例如：高三1班 张三">
+    <div class="modal-err" id="nameModalErr"></div>
+    <div class="modal-btns"><button class="btn btn-ghost" id="nameModalCancel">暂不练习</button><button class="btn btn-primary" id="nameModalBtn">确认进入</button></div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+const LS='vineyard_ielts_s5_';
+const firebaseConfig={
+  apiKey:"AIzaSyBelnbI82VEjA9Q-74pczGuH5LoSBDxJzw",
+  authDomain:"s1-writing.firebaseapp.com",
+  databaseURL:"https://s1-writing-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId:"s1-writing",
+  storageBucket:"s1-writing.firebasestorage.app",
+  messagingSenderId:"715593483825",
+  appId:"1:715593483825:web:5bd4d0cf8568c1e28ff710"
+};
+let fbReady=false,db=null;
+try{if(typeof firebase!=='undefined'){firebase.initializeApp(firebaseConfig);db=firebase.database();fbReady=true;}}catch(e){console.warn('Firebase init failed',e)}
+const norm=s=>String(s||'').trim().toLowerCase().replace(/\s+/g,' ');
+const wordCount=t=>{const m=String(t||'').replace(/<[^>]+>/g,' ').trim().match(/[A-Za-z0-9'-]+/g);return m?m.length:0};
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}} function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function sanitizeKey(s){return String(s).replace(/[.#$\[\]\/]/g,'_')}
+function getStudentName(){return lsGet(LS+'studentName')||''} function setStudentName(n){lsSet(LS+'studentName',n)}
+function updateStudentTag(){const t=document.getElementById('studentTag');if(t)t.textContent=getStudentName()?('当前学生：'+getStudentName()):''}
+function recordAttempt(kind,id,data){
+  try{
+    if(!fbReady||!db||!getStudentName())return;
+    const correct=Number(data.correct??data.score??0),total=Number(data.total??0);
+    db.ref('s1_attempts/S5__'+sanitizeKey(getStudentName())).push(Object.assign({},data,{
+      name:getStudentName(),exercise:id,correct,total,ts:Date.now(),
+      dateStr:new Date().toLocaleString('zh-CN')
+    }));
+  }catch(e){console.warn('recordAttempt failed',e)}
+}
+function recordEssay(essayKey,html,wc){
+  try{
+    if(!fbReady||!db||!getStudentName())return;
+    db.ref('s1_essays/S5__'+sanitizeKey(getStudentName())+'/'+essayKey).update({
+      name:getStudentName(),content:html,wordCount:wc,updatedAt:Date.now(),
+      updatedDateStr:new Date().toLocaleString('zh-CN')
+    });
+  }catch(e){console.warn('recordEssay failed',e)}
+}
+function listenFeedback(essayKey,box){
+  try{
+    if(!fbReady||!db||!getStudentName()||!box)return;
+    db.ref('s1_essays/S5__'+sanitizeKey(getStudentName())+'/'+essayKey).on('value',snap=>{
+      const data=snap.val();
+      if(data&&(data.teacherComment||data.teacherScore)){
+        const parts=[];
+        if(data.teacherScore)parts.push('评分：'+data.teacherScore);
+        if(data.teacherComment)parts.push(data.teacherComment);
+        box.querySelector('.fb-content').textContent=parts.join('\n');
+        box.classList.add('show');
+      }else box.classList.remove('show');
+    });
+  }catch(e){console.warn('listenFeedback failed',e)}
+}
+
+const nameModal=document.getElementById('nameModal'),nameInput=document.getElementById('nameModalInput'),nameErr=document.getElementById('nameModalErr');let pendingActivate=null;
+function openNameModal(cb){pendingActivate=cb;nameInput.value=getStudentName();nameErr.textContent='';nameModal.classList.add('open');setTimeout(()=>nameInput.focus(),60)}
+function closeNameModal(){nameModal.classList.remove('open');pendingActivate=null}
+document.getElementById('nameModalBtn').onclick=()=>{const v=nameInput.value.trim();if(!v){nameErr.textContent='请输入姓名后再继续';return}setStudentName(v);updateStudentTag();const cb=pendingActivate;closeNameModal();if(cb)cb();initFeedback()};
+document.getElementById('nameModalCancel').onclick=closeNameModal;nameInput.onkeydown=e=>{if(e.key==='Enter')document.getElementById('nameModalBtn').click()};
+function activateTab(tab){document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+tab));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('nav.tabs button').forEach(btn=>btn.onclick=()=>{const tab=btn.dataset.tab;if(tab==='t3'&&!getStudentName())openNameModal(()=>activateTab(tab));else activateTab(tab)});
+updateStudentTag();
+
+function sportsMap(){
+  return `<svg viewBox="0 0 760 720" role="img" aria-label="University sports centre present and future">
+    <text x="380" y="28" class="map-title" text-anchor="middle">UNIVERSITY SPORTS CENTRE (present)</text>
+    <rect x="215" y="55" width="330" height="245" rx="3" class="site" data-zone="central"/>
+    <rect x="52" y="92" width="125" height="170" class="green" data-zone="outdoor"/><text x="114" y="168" class="map-label" data-zone="outdoor"><tspan x="114">Outdoor</tspan><tspan x="114" dy="15">courts</tspan></text>
+    <rect x="583" y="92" width="125" height="170" class="green" data-zone="outdoor"/><text x="645" y="168" class="map-label" data-zone="outdoor"><tspan x="645">Outdoor</tspan><tspan x="645" dy="15">courts</tspan></text>
+    <rect x="300" y="105" width="160" height="125" class="water" data-zone="central"/><text x="380" y="163" class="map-label" data-zone="central"><tspan x="380">25m</tspan><tspan x="380" dy="15">Pool</tspan></text>
+    <rect x="265" y="58" width="230" height="38" class="site" data-zone="central"/><text x="380" y="82" class="map-label" data-zone="central">Gym</text>
+    <rect x="218" y="96" width="72" height="140" class="site" data-zone="central"/><text x="254" y="158" class="map-small" data-zone="central" transform="rotate(-90 254 158)">Changing room</text>
+    <rect x="470" y="96" width="72" height="140" class="site" data-zone="central"/><text x="506" y="166" class="map-small" data-zone="central" transform="rotate(90 506 166)">Seating</text>
+    <path d="M315 236h130v36H315z" class="site" data-zone="central"/><text x="380" y="259" class="map-label" data-zone="central">Reception</text>
+    <text x="380" y="335" class="north">N ↑</text>
+    <text x="380" y="382" class="map-title" text-anchor="middle">UNIVERSITY SPORTS CENTRE (future plans)</text>
+    <rect x="45" y="405" width="670" height="260" rx="3" class="site" data-zone="new"/>
+    <rect x="275" y="430" width="210" height="38" class="site" data-zone="central"/><text x="380" y="454" class="map-label" data-zone="central">Gym</text>
+    <rect x="310" y="480" width="140" height="120" class="water" data-zone="central"/><text x="380" y="535" class="map-label" data-zone="central"><tspan x="380">25m</tspan><tspan x="380" dy="15">Pool</tspan></text>
+    <rect x="275" y="468" width="32" height="132" class="site" data-zone="central"/><text x="291" y="535" class="map-small" data-zone="central" transform="rotate(-90 291 535)">Changing room</text>
+    <rect x="453" y="468" width="34" height="132" class="site" data-zone="central"/><text x="470" y="535" class="map-small" data-zone="central" transform="rotate(90 470 535)">Seating</text>
+    <path d="M315 604h130v35H315z" class="site" data-zone="central"/><text x="380" y="627" class="map-small" data-zone="central">Reception</text>
+    <path d="M70 438q70-35 150 5v145H70z" class="water" data-zone="new"/><text x="145" y="515" class="map-label" data-zone="new"><tspan x="145">Leisure</tspan><tspan x="145" dy="15">pool</tspan></text>
+    <rect x="500" y="472" width="105" height="128" class="site" data-zone="new"/><text x="552" y="532" class="map-label" data-zone="new"><tspan x="552">Sports</tspan><tspan x="552" dy="15">hall</tspan></text>
+    <rect x="615" y="430" width="75" height="70" class="site" data-zone="new"/><rect x="615" y="500" width="75" height="70" class="site" data-zone="new"/><text x="652" y="466" class="map-small" data-zone="new">Dance studio</text><text x="652" y="536" class="map-small" data-zone="new">Dance studio</text>
+    <rect x="70" y="602" width="105" height="48" class="site" data-zone="new"/><text x="122" y="623" class="map-small" data-zone="new"><tspan x="122">Changing</tspan><tspan x="122" dy="13">room</tspan></text>
+    <rect x="188" y="602" width="82" height="48" class="site" data-zone="new"/><text x="229" y="623" class="map-small" data-zone="new"><tspan x="229">Sports</tspan><tspan x="229" dy="13">shop</tspan></text>
+    <rect x="505" y="610" width="92" height="40" class="site" data-zone="new"/><text x="551" y="635" class="map-small" data-zone="new">Café</text>
+    <rect x="610" y="590" width="80" height="60" class="site" data-zone="new"/><text x="650" y="616" class="map-small" data-zone="new"><tspan x="650">Changing</tspan><tspan x="650" dy="13">room</tspan></text>
+    <text x="380" y="697" class="north">N ↑</text>
+  </svg>`;
+}
+function parkPanel(y,today){
+  const title=today?'GRANGE PARK (today)':'GRANGE PARK (1920)';
+  if(!today)return `<g transform="translate(0 ${y})">
+    <text x="380" y="24" class="map-title" text-anchor="middle">${title}</text><text x="380" y="45" class="road-label">ARNOLD AVENUE</text>
+    <rect x="55" y="55" width="650" height="235" class="green"/>
+    <rect x="330" y="49" width="100" height="22" class="site" data-zone="entrances entrances2"/><text x="380" y="65" class="map-small" data-zone="entrances entrances2">Entrance</text>
+    <rect x="330" y="274" width="100" height="22" class="site" data-zone="entrances entrances2"/><text x="380" y="289" class="map-small" data-zone="entrances entrances2">Entrance</text>
+    <path d="M88 55h125q0 62-62 62T88 55" class="site" data-zone="west2"/><text x="150" y="78" class="map-small" data-zone="west2"><tspan x="150">Rose</tspan><tspan x="150" dy="13">garden</tspan></text>
+    <path d="M475 55h125q0 62-62 62t-63-62" class="site" data-zone="east2"/><text x="537" y="78" class="map-small" data-zone="east2"><tspan x="537">Rose</tspan><tspan x="537" dy="13">garden</tspan></text>
+    <rect x="115" y="132" width="122" height="72" class="site" data-zone="stage west2"/><text x="176" y="160" class="map-label" data-zone="stage west2"><tspan x="176">Stage for</tspan><tspan x="176" dy="15">musicians</tspan></text>
+    <circle cx="380" cy="165" r="44" class="water" data-zone="stage centre2"/><text x="380" y="169" class="map-label" data-zone="stage centre2">Fountain</text>
+    <path d="M575 82q90-25 105 28v68q-70 22-118-12z" class="water" data-zone="east east2"/><text x="621" y="124" class="map-small" data-zone="east east2"><tspan x="621">Pond for</tspan><tspan x="621" dy="13">water plants</tspan></text>
+    <path d="M88 290q0-62 62-62t63 62" class="site" data-zone="west2"/><text x="150" y="256" class="map-small" data-zone="west2"><tspan x="150">Rose</tspan><tspan x="150" dy="13">garden</tspan></text>
+    <rect x="485" y="235" width="170" height="38" class="site" data-zone="east east2"/><text x="570" y="259" class="map-label" data-zone="east east2">Glasshouse</text>
+    <text x="380" y="315" class="road-label">ELDON STREET</text>
+  </g>`;
+  return `<g transform="translate(0 ${y})">
+    <text x="380" y="24" class="map-title" text-anchor="middle">${title}</text><text x="380" y="45" class="road-label">ARNOLD AVENUE</text>
+    <rect x="55" y="55" width="650" height="235" class="green"/>
+    <rect x="330" y="49" width="100" height="22" class="site"/><text x="380" y="65" class="map-small">Entrance</text>
+    <rect x="330" y="274" width="100" height="22" class="site"/><text x="380" y="289" class="map-small">Entrance</text>
+    <path d="M88 55h125q0 62-62 62T88 55" class="site" data-zone="west3"/><text x="150" y="78" class="map-small" data-zone="west3"><tspan x="150">Rose</tspan><tspan x="150" dy="13">garden</tspan></text>
+    <path d="M75 136q82-85 150 0v80q-80 55-150 0z" class="site" data-zone="stage west3"/><text x="150" y="169" class="map-label" data-zone="stage west3"><tspan x="150">Amphitheatre</tspan><tspan x="150" dy="15">for concerts</tspan></text>
+    <rect x="315" y="120" width="130" height="105" class="site" data-zone="centre3"/><text x="380" y="166" class="map-label" data-zone="centre3"><tspan x="380">Rose</tspan><tspan x="380" dy="15">garden</tspan></text>
+    <rect x="500" y="70" width="90" height="62" class="site" data-zone="east east3"/><text x="545" y="106" class="map-label" data-zone="east east3">Café</text>
+    <rect x="603" y="70" width="90" height="92" class="site" data-zone="east east3"/><text x="648" y="108" class="map-small" data-zone="east east3"><tspan x="648">Children's</tspan><tspan x="648" dy="13">play area</tspan></text>
+    <path d="M515 205q70-45 155 3q-70 60-150 37z" class="water" data-zone="stage east east3"/><text x="593" y="258" class="map-small" data-zone="stage east east3">Water feature</text>
+    <path d="M650 290h55v-52" class="site" data-zone="carpark car3"/><text x="642" y="309" class="map-small" data-zone="carpark car3"><tspan x="642">Entrance to underground</tspan><tspan x="642" dy="13">car park</tspan></text>
+    <text x="380" y="315" class="road-label">ELDON STREET</text>
+  </g>`;
+}
+function parkMap(mode){
+  if(mode==='old')return `<svg viewBox="0 0 760 330" role="img" aria-label="Grange Park in 1920">${parkPanel(0,false)}</svg>`;
+  if(mode==='new')return `<svg viewBox="0 0 760 330" role="img" aria-label="Grange Park today">${parkPanel(0,true)}</svg>`;
+  return `<svg viewBox="0 0 760 660" role="img" aria-label="Grange Park 1920 and today">${parkPanel(0,false)}${parkPanel(330,true)}</svg>`;
+}
+document.querySelectorAll('.interactive-map').forEach(map=>{
+  const kind=map.dataset.mapKind;
+  map.innerHTML=kind==='sports'?sportsMap():kind==='park'?parkMap('both'):kind==='park-old'?parkMap('old'):kind==='park-new'?parkMap('new'):'';
+});
+document.querySelectorAll('.click-sent').forEach(s=>s.onclick=()=>{
+  const wrap=s.closest('.split-layout').querySelector('.interactive-map');
+  if(!wrap)return;
+  const targets=s.dataset.target.split(',');
+  const isSame=s.classList.contains('active');
+  wrap.classList.toggle('has-active',!isSame);
+  wrap.querySelectorAll('[data-zone]').forEach(el=>{const zones=el.dataset.zone.split(/\s+/);el.classList.toggle('map-on',!isSame&&targets.some(t=>zones.includes(t)))});
+  s.closest('.split-content').querySelectorAll('.click-sent').forEach(x=>x.classList.toggle('active',!isSame&&x===s));
+});
+const harbourSentences=[...document.querySelectorAll('.harbour-sentence')];
+const harbourRegions=[...document.querySelectorAll('.harbour-region,.harbour-region-group')];
+const harbourExplanation=document.querySelector('#harbourExplanation p');
+function clearHarbourHighlight(){
+  harbourRegions.forEach(el=>el.classList.remove('map-on'));
+  harbourSentences.forEach(s=>{s.classList.remove('active');s.setAttribute('aria-pressed','false')});
+}
+harbourSentences.forEach(s=>{
+  s.setAttribute('aria-pressed','false');
+  s.addEventListener('click',()=>{
+    clearHarbourHighlight();
+    s.dataset.target.trim().split(/\s+/).forEach(id=>document.getElementById(id)?.classList.add('map-on'));
+    s.classList.add('active');s.setAttribute('aria-pressed','true');
+    if(harbourExplanation)harbourExplanation.textContent=s.dataset.explanation;
+    if(matchMedia('(max-width:900px)').matches){
+      const map=document.getElementById('harbourMapCard'),rect=map.getBoundingClientRect();
+      if(rect.top<0||rect.top>innerHeight*.72)map.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+document.getElementById('harbourClear')?.addEventListener('click',()=>{
+  clearHarbourHighlight();
+  if(harbourExplanation)harbourExplanation.textContent='点击任意范文句子开始。';
+});
+document.querySelectorAll('.ex-check').forEach(btn=>btn.onclick=()=>{
+  const box=btn.closest('.vex');let ok=0,total=0,answered=0;
+  box.querySelectorAll('.ex-in').forEach(inp=>{
+    total++;const feedback=inp.closest('.fill-unit')?.querySelector('.field-feedback');const blank=!inp.value.trim();
+    const answers=String(inp.dataset.ans).split('|');const good=!blank&&answers.some(a=>norm(a)===norm(inp.value));
+    inp.classList.toggle('correct',good);inp.classList.toggle('wrong',!blank&&!good);
+    if(feedback){feedback.textContent=blank?'请填写答案':good?'正确':'正确答案：'+answers[0];feedback.className='field-feedback '+(good?'good':'bad')}
+    if(good)ok++;if(!blank)answered++;
+  });
+  const sc=box.querySelector('.ex-score');sc.textContent=answered<total?`已完成 ${answered}/${total}`:`${ok}/${total}`;sc.className='ex-score '+(ok===total?'ok':'partial');
+  recordAttempt('practice',box.dataset.vexid,{score:ok,total});
+});
+document.querySelectorAll('.ex-redo').forEach(btn=>btn.onclick=()=>{
+  const box=btn.closest('.vex');box.querySelectorAll('.ex-in').forEach(i=>{i.value='';i.classList.remove('correct','wrong')});
+  box.querySelectorAll('.field-feedback').forEach(f=>{f.textContent='';f.className='field-feedback'});box.querySelector('.ex-score').textContent='';
+});
+const mapMcqData=[
+  {q:'咖啡馆位于公园的西北角。',a:1,o:['The café was locating in the north-western corner of the park.','The café was located in the north-western corner of the park.','The café located in the north-western corner of the park.','The café was located in the north-western corner to the park.']},
+  {q:'游乐区紧邻咖啡馆。',a:3,o:['The play area was adjacent with the café.','The play area was adjacently to the café.','The play area was adjacent at the café.','The play area was adjacent to the café.']},
+  {q:'喷泉位于入口的正对面。',a:0,o:['The fountain stood opposite the entrance.','The fountain stood oppositely the entrance.','The fountain was stand opposite the entrance.','The fountain stood opposite with the entrance.']},
+  {q:'一条小路沿着公园的东侧延伸。',a:2,o:['A footpath ran along with to the eastern side of the park.','A footpath ran along the eastern side to the park.','A footpath ran along the eastern side of the park.','A footpath was run along the eastern side of the park.']},
+  {q:'原来的休息区被改造成咖啡馆。',a:0,o:['The original seating area was converted into a café.','The original seating area was converted as a café.','The original seating area was convert into a café.','The original seating area was converted into become a café.']},
+  {q:'原来的体育馆被拆除。',a:2,o:['The original gym was being demolish.','The original gym was disappeared.','The original gym was demolished.','The original gym had demolished by the council.']},
+  {q:'池塘被儿童游乐区取代。',a:3,o:["The pond was replaced to a children's play area.","The pond was replace by a children's play area.","The pond was replaced from a children's play area.","The pond was replaced by a children's play area."]},
+  {q:'咖啡馆被迁至公园中心。',a:1,o:['The café was relocate to the centre of the park.','The café was relocated to the centre of the park.','The café was relocated to moved to the centre of the park.','The café was relocated the centre of the park.']},
+  {q:'停车场得到扩建。',a:2,o:['The car park was expansion.','The car park was expand.','The car park was expanded.','The car park was expanded to larger.']},
+  {q:'公园经历了显著变化。',a:1,o:['The park was underwent significant changes.','The park underwent significant changes.','The park underwent significantly changes.','The park happened significant changes.']},
+  {q:'入口的位置保持不变。',a:3,o:['The position of the entrance was remained unchanged.','The position of the entrance remained unchange.','The position of the entrance was remained no changed.','The position of the entrance remained unchanged.']},
+  {q:'最显著的变化包括新增咖啡馆和停车场。',a:0,o:['The most notable changes included the addition of a café and a car park.','The most notable changes included to add a café and a car park.','The most notable changes were included the addition of a café and a car park.','The most notable changes included the add of a café and a car park.']}
+];
+const mcqBox=document.getElementById('mapMcq');
+mcqBox.querySelector('.mcq-list').innerHTML=mapMcqData.map((item,i)=>`<div class="mcq-card" data-q="${i}"><div class="mcq-title">${i+1}. ${item.q}</div><div class="mcq-options">${item.o.map((opt,j)=>`<label class="mcq-option"><input type="radio" name="mapq${i}" value="${j}"><b>${'ABCD'[j]}.</b><span>${opt}</span></label>`).join('')}</div><div class="question-feedback"></div></div>`).join('');
+mcqBox.querySelector('.mcq-check').onclick=()=>{
+  let ok=0,answered=0;
+  mcqBox.querySelectorAll('.mcq-card').forEach((card,i)=>{
+    const picked=card.querySelector('input:checked'),feedback=card.querySelector('.question-feedback');
+    card.querySelectorAll('.mcq-option').forEach(x=>x.classList.remove('correct','wrong'));
+    if(!picked){feedback.textContent='请选择答案';feedback.className='question-feedback bad';return}
+    answered++;const choice=Number(picked.value),good=choice===mapMcqData[i].a;
+    picked.closest('.mcq-option').classList.add(good?'correct':'wrong');
+    if(good){ok++;feedback.textContent='正确';feedback.className='question-feedback good'}
+    else{card.querySelectorAll('.mcq-option')[mapMcqData[i].a].classList.add('correct');feedback.textContent=`正确答案：${'ABCD'[mapMcqData[i].a]}`;feedback.className='question-feedback bad'}
+  });
+  const sc=mcqBox.querySelector('.ex-score');sc.textContent=answered<mapMcqData.length?`已完成 ${answered}/${mapMcqData.length}`:`${ok}/${mapMcqData.length}，正确率 ${Math.round(ok/mapMcqData.length*100)}%`;sc.className='ex-score '+(ok===mapMcqData.length?'ok':'partial');
+  recordAttempt('practice','map_mcq',{score:ok,total:mapMcqData.length});
+};
+mcqBox.querySelector('.mcq-redo').onclick=()=>{
+  mcqBox.querySelectorAll('input').forEach(i=>i.checked=false);mcqBox.querySelectorAll('.mcq-option').forEach(x=>x.classList.remove('correct','wrong'));mcqBox.querySelectorAll('.question-feedback').forEach(f=>{f.textContent='';f.className='question-feedback'});mcqBox.querySelector('.ex-score').textContent='';
+};
+const passiveData=[
+  {q:'一条新的自行车道环绕湖泊修建。',verb:'construct',places:'自行车道 cycle path；湖泊 lake',answers:['A new cycle path was constructed around the lake.']},
+  {q:'河边的几座旧仓库被拆除，为酒店腾出空间。',verb:'demolish',places:'仓库 warehouses；河流 river；酒店 hotel',answers:['The old warehouses by the river were demolished to make way for a hotel.']},
+  {q:'原来的火车站被改造成一座博物馆。',verb:'convert',places:'火车站 railway station；博物馆 museum',answers:['The former railway station was converted into a museum.','The original railway station was converted into a museum.']},
+  {q:'北部的农田被住宅区取代。',verb:'replace',places:'农田 farmland；住宅区 residential area',answers:['The farmland in the north was replaced by a residential area.']},
+  {q:'公交车站从公园西侧迁至公园东南角。',verb:'relocate',places:'公交车站 bus stop；公园 park',answers:['The bus stop was relocated from the western side of the park to the south-eastern corner of the park.','The bus stop was relocated from the western side of the park to the southeastern corner of the park.']},
+  {q:'通往市中心的主要道路被拓宽。',verb:'widen',places:'主要道路 main road；市中心 town centre',answers:['The main road leading to the town centre was widened.']},
+  {q:'河上增设了一座人行桥。',verb:'add',places:'人行桥 pedestrian bridge；河流 river',answers:['A pedestrian bridge was added across the river.']}
+];
+const normSentence=s=>norm(String(s||'').replace(/[’]/g,"'").replace(/[.!?]+$/,''));
+const passiveBox=document.getElementById('passiveWriting');
+passiveBox.querySelector('.sentence-list').innerHTML=passiveData.map((item,i)=>`<div class="sentence-card" data-q="${i}"><div class="mcq-title">${i+1}. ${item.q}</div><div class="hint-row"><span class="hint-chip">动词原形：${item.verb}</span><span class="hint-chip">地点名称：${item.places}</span></div><input class="sentence-answer" aria-label="第${i+1}题答案"><div class="question-feedback"></div></div>`).join('');
+passiveBox.querySelector('.sentence-check').onclick=()=>{
+  let ok=0,answered=0;
+  passiveBox.querySelectorAll('.sentence-card').forEach((card,i)=>{
+    const input=card.querySelector('.sentence-answer'),feedback=card.querySelector('.question-feedback'),blank=!input.value.trim();
+    card.classList.remove('correct','wrong');
+    if(blank){feedback.textContent='请填写答案';feedback.className='question-feedback bad';return}
+    answered++;const good=passiveData[i].answers.some(a=>normSentence(a)===normSentence(input.value));card.classList.add(good?'correct':'wrong');
+    if(good){ok++;feedback.textContent='正确';feedback.className='question-feedback good'}else{feedback.textContent='参考答案：'+passiveData[i].answers[0];feedback.className='question-feedback bad'}
+  });
+  const sc=passiveBox.querySelector('.ex-score');sc.textContent=answered<passiveData.length?`已完成 ${answered}/${passiveData.length}`:`${ok}/${passiveData.length}，正确率 ${Math.round(ok/passiveData.length*100)}%`;sc.className='ex-score '+(ok===passiveData.length?'ok':'partial');
+  recordAttempt('practice','passive_writing',{score:ok,total:passiveData.length});
+};
+passiveBox.querySelector('.sentence-redo').onclick=()=>{
+  passiveBox.querySelectorAll('.sentence-answer').forEach(i=>i.value='');passiveBox.querySelectorAll('.sentence-card').forEach(c=>c.classList.remove('correct','wrong'));passiveBox.querySelectorAll('.question-feedback').forEach(f=>{f.textContent='';f.className='question-feedback'});passiveBox.querySelector('.ex-score').textContent='';
+};
+const matchData=[
+  ['greater operational efficiency and higher standards of output across industries','各行业更高的运营效率和产出标准'],
+  ['compete for customers and market share','争夺客户和市场份额'],
+  ['be incentivised to reduce costs, improve quality, and innovate continuously','受到激励去降低成本、提高质量并持续创新'],
+  ['enhanced emotional resilience and a stronger capacity to handle failure and adversity','增强心理韧性以及应对失败和逆境的能力'],
+  ['regulate their emotions and persist under pressure','调节情绪并在压力下坚持'],
+  ['improved psychological well-being and a reduced sense of isolation','改善心理健康并减少孤立感'],
+  ['constant performance comparison','持续进行的表现比较'],
+  ['feel valued for their contributions rather than judged solely by their ranking','因个人贡献而获得认可，而不是仅按照排名被评价'],
+  ['a broader and more diverse exchange of knowledge','更广泛、更多元的知识交流'],
+  ['pool their expertise','汇集各自的专业知识']
+];
+const matchBox=document.getElementById('essayClickMatch'),matchLeft=matchBox.querySelector('.match-left'),matchRight=matchBox.querySelector('.match-right');
+let activeMatchLeft=null,matchPairs={};
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+function refreshPairMarks(){
+  matchBox.querySelectorAll('.match-choice').forEach(b=>{b.classList.remove('paired','active','correct','wrong');delete b.dataset.pair});
+  matchData.forEach((_,i)=>{const rid=matchPairs[i];if(rid===undefined)return;const left=matchLeft.querySelector(`[data-id="${i}"]`),right=matchRight.querySelector(`[data-id="${rid}"]`);left.classList.add('paired');right.classList.add('paired');left.dataset.pair=i+1;right.dataset.pair=i+1});
+}
+function renderMatch(){
+  activeMatchLeft=null;matchPairs={};
+  matchLeft.innerHTML=matchData.map((p,i)=>`<button class="match-choice eng" data-side="left" data-id="${i}">${p[0]}</button>`).join('');
+  matchRight.innerHTML=shuffle(matchData.map((p,i)=>({id:i,text:p[1]}))).map(p=>`<button class="match-choice" data-side="right" data-id="${p.id}">${p.text}</button>`).join('');
+  matchBox.querySelector('.ex-score').textContent='';
+}
+renderMatch();
+matchBox.addEventListener('click',e=>{
+  const btn=e.target.closest('.match-choice');if(!btn)return;
+  if(btn.dataset.side==='left'){activeMatchLeft=Number(btn.dataset.id);matchLeft.querySelectorAll('.match-choice').forEach(b=>b.classList.toggle('active',b===btn));return}
+  if(activeMatchLeft===null)return;
+  const rightId=Number(btn.dataset.id);Object.keys(matchPairs).forEach(k=>{if(matchPairs[k]===rightId)delete matchPairs[k]});matchPairs[activeMatchLeft]=rightId;activeMatchLeft=null;refreshPairMarks();
+});
+matchBox.querySelector('.click-match-check').onclick=()=>{
+  const total=matchData.length,paired=Object.keys(matchPairs).length,sc=matchBox.querySelector('.ex-score');
+  if(paired<total){sc.textContent=`请完成全部配对（${paired}/${total}）`;sc.className='ex-score partial';return}
+  let ok=0;matchData.forEach((_,i)=>{const good=matchPairs[i]===i,left=matchLeft.querySelector(`[data-id="${i}"]`),right=matchRight.querySelector(`[data-id="${matchPairs[i]}"]`);left.classList.add(good?'correct':'wrong');right.classList.add(good?'correct':'wrong');if(good)ok++});
+  sc.textContent=`答对 ${ok}/${total}，正确率 ${Math.round(ok/total*100)}%`;sc.className='ex-score '+(ok===total?'ok':'partial');recordAttempt('practice','essay_match',{score:ok,total,accuracy:Math.round(ok/total*100)});
+};
+matchBox.querySelector('.click-match-redo').onclick=renderMatch;
+let dragged=null;document.querySelectorAll('.chunk').forEach(c=>{c.addEventListener('dragstart',()=>{dragged=c;c.classList.add('dragging')});c.addEventListener('dragend',()=>{c.classList.remove('dragging');dragged=null});c.addEventListener('click',()=>{const box=c.closest('.dragsort'),pool=box.querySelector('.pool'),zone=box.querySelector('.zone');(c.parentElement===pool?zone:pool).appendChild(c);c.classList.remove('correct','wrong');box.querySelector('.ex-score').textContent='';box.querySelector('.drag-answer')?.classList.remove('show')})});
+document.querySelectorAll('.pool,.zone').forEach(z=>{z.addEventListener('dragover',e=>e.preventDefault());z.addEventListener('drop',e=>{e.preventDefault();if(dragged){z.appendChild(dragged);const box=z.closest('.dragsort');box.querySelector('.drag-answer')?.classList.remove('show');box.querySelector('.ex-score').textContent=''}})});
+document.querySelectorAll('.drag-check').forEach(btn=>btn.onclick=()=>{const box=btn.closest('.dragsort'),want=box.dataset.order.split(','),chunks=[...box.querySelector('.zone').querySelectorAll('.chunk')];let ok=0;chunks.forEach((c,i)=>{const good=c.dataset.idx===want[i];c.classList.toggle('correct',good);c.classList.toggle('wrong',!good);if(good)ok++;});const sc=box.querySelector('.ex-score');sc.textContent=chunks.length===want.length?`${ok}/${want.length}`:'请把所有语块拖到答案区';sc.className='ex-score '+(ok===want.length?'ok':'partial');box.querySelector('.drag-answer')?.classList.add('show');recordAttempt('practice',box.dataset.vexid,{score:ok,total:want.length,answer:chunks.map(c=>c.dataset.idx)});});
+document.querySelectorAll('.drag-redo').forEach(btn=>btn.onclick=()=>{const box=btn.closest('.dragsort'),pool=box.querySelector('.pool');box.querySelectorAll('.chunk').forEach(c=>{c.classList.remove('correct','wrong');pool.appendChild(c)});box.querySelector('.ex-score').textContent='';box.querySelector('.drag-answer')?.classList.remove('show');});
+document.querySelectorAll('.wbox').forEach(w=>{const key=w.dataset.essay,ed=w.querySelector('.editable'),wc=w.querySelector('.wc'),flag=w.querySelector('.save-flag');ed.innerHTML=lsGet(LS+key)||'';function update(){wc.textContent=wordCount(ed.innerText)+' words';lsSet(LS+key,ed.innerHTML)}ed.addEventListener('input',update);update();w.querySelectorAll('[data-cmd]').forEach(b=>b.onclick=()=>{document.execCommand(b.dataset.cmd,false,null);ed.focus();update()});w.querySelector('.essay-save').onclick=()=>{const n=wordCount(ed.innerText);lsSet(LS+key,ed.innerHTML);recordEssay(key,ed.innerHTML,n);flag.classList.add('show');setTimeout(()=>flag.classList.remove('show'),1400)};w.querySelector('.essay-clear').onclick=()=>{if(confirm('确定清空这篇作文吗？')){ed.innerHTML='';update()}}});
+function initFeedback(){document.querySelectorAll('.fb-box').forEach(b=>listenFeedback(b.dataset.fb,b))} initFeedback();
+</script>
+</body>
+</html>
